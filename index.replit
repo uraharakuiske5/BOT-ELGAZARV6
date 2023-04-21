@@ -1,6 +1,6 @@
 
 require('./settings')
-const { default: ElgazarBotConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { default: UraharakuiskeConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`${sessionName}.json`)
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
@@ -69,27 +69,27 @@ if (global.db) setInterval(async () => {
   }, 30 * 1000)
 
 async function startElgazarBot() {
-    const ElgazarBot = ElgazarBotConnect({
+    const Uraharakuiske = uraharabotConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['Cheems Bot MD','Safari','1.0.0'],
         auth: state
     })
 
-    store.bind(ElgazarBot.ev)
+    store.bind(Uraharabot.ev)
     
     // anticall auto block
-    ElgazarBot.ws.on('CB:call', async (json) => {
+    Uraharabot.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
     let blockxeon = await ElgazarBot.sendContact(callerId, global.owner)
-    ElgazarBot.sendMessage(callerId, { text: `*نظام الحظر التلقائي!*\n*لا تتصل بالبوت*!\n*تواصل مع المطور لالغاء حظرك✨ !*`}, { quoted : blockxeon })
+    Uraharabot.sendMessage(callerId, { text: `*نظام الحظر التلقائي!*\n*لا تتصل بالبوت*!\n*تواصل مع المطور لالغاء حظرك✨ !*`}, { quoted : blockxeon })
     await sleep(8000)
     await ElgazarBot.updateBlockStatus(callerId, "block")
     }
     })
 
-    ElgazarBot.ev.on('messages.upsert', async chatUpdate => {
+    Uraharabot.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
         mek = chatUpdate.messages[0]
@@ -106,11 +106,11 @@ async function startElgazarBot() {
     })
     
     // Group Update
-    ElgazarBot.ev.on('groups.update', async pea => {
+    Uraharabot.ev.on('groups.update', async pea => {
        //console.log(pea)
     // Get Profile Picture Group
        try {
-       ppgc = await ElgazarBot.profilePictureUrl(pea[0].id, 'image')
+       ppgc = await uraharbot.profilePictureUrl(pea[0].id, 'image')
        } catch {
        ppgc = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png'
        }
@@ -136,7 +136,7 @@ return list[Math.floor(list.length * Math.random())]
 let documents = [doc1,doc2,doc3,doc4,doc5,doc6]
 let docs = pickRandom(documents)
 
-    ElgazarBot.ev.on('group-participants.update', async (anu) => {
+    Uraharabot.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
             let metadata = await ElgazarBot.groupMetadata(anu.id)
@@ -157,7 +157,7 @@ let docs = pickRandom(documents)
                 }
                 
                 //welcome\\
-        let nama = await ElgazarBot.getName(num)
+        let nama = await uraharbot.getName(num)
 memb = metadata.participants.length
 XeonWlcm = await getBuffer(ppuser)
 XeonLft = await getBuffer(ppuser)
