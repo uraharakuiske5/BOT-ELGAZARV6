@@ -17,8 +17,8 @@ global.doc6 = 'application/vnd.android.package-archive'
 //owmner v card
 global.owner = ['212 721-6852'] //ur owner number
 global.ownername = "Urahara kuiske ❤️" //ur owner name
-global.ytname = "YT: ELGAZAR" //ur yt chanel name
-global.socialm = "GitHub: ELGAZAR" //ur github or insta name
+global.ytname = "YT: Urahara" //ur yt chanel name
+global.socialm = "GitHub: Urahara" //ur github or insta name
 global.location = "Africa, Egypt, Cairo" //ur location
 
 //bot bomdy 
@@ -29,7 +29,7 @@ global.linkz = "https://youtube.com/@ABDALLAH_MOHAMED" //your theme url which wi
 global.websitex = "https://telegra.ph/file/5e06f1ccaf02573c985d2.jpg" //ur website to be displayed
 global.botscript = 'https://instagram.com/urahara12345?igshid=ZDdkNTZiNTM=' //Instagram link 
 global.themeemoji = "♥" //ur theme emoji
-global.packname = "⍣الجزار الوزير يروحي⍣" //ur sticker watermark packname
+global.packname = "⍣اوراهارا كيسكي عمك ✨⍣" //ur sticker watermark packname
 global.author = "⍣0721685246⍣" //ur sticker watermark author
 global.wm = "❤️ Urahara kuiske ❤️." //ur watermark
 
